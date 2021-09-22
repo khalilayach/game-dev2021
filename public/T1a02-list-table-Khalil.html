@@ -31,18 +31,50 @@ table.center {
 3x3 table
 <br><br>
 
-<table  class="center"> 
+<table  border=2> 
 <h1>
 <tr><td>1</td><td>2</td><td>3</td></tr>
 <tr><td>4</td><td>5</td><td>6</td></tr>
 <tr><td>7</td><td>8</td><td>9</td></tr>
-
-
 </table 
+
+
+<br><br>
+
+<table  border=2> 
+3x4 table
+<h1>
+<tr><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>4</td><td>5</td><td>6</td></tr>
+<tr><td>7</td><td>8</td><td>9</td></tr>
+<tr><td>7</td><td>8</td><td>9</td></tr>
+
+
+
 
 
 
 </table <br><br>
+
+
+<table  border=2> 
+4x4 table
+<h1>
+<tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+<tr><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+<tr><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+<tr><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+
+
+
+
+
+
+</table <br><br>
+
+
+
+
 Table In Table
 <br>
 
@@ -58,6 +90,88 @@ Table In Table
 <tr><td> 7</td><td> 8</td><td>9</td></tr>  
 </h2>
 </table 
+
+
+Moving Player
+
+<br>
+
+
+
+
+
+<table border="2"> 
+<h1>
+<tr><td></td><td>
+<input type=button value="W" onClick="{ 
+
+
+  document.getElementById('mySpan01').style.top = 
+ parseInt (document.getElementById('mySpan01').style.top) - 10
+
+}">
+</td><td></td></tr>
+<tr><td>
+<input type=button value="A" onClick="{
+
+  document.getElementById('mySpan01').style.left = 
+ parseInt (document.getElementById('mySpan01').style.left) - 10
+ }">
+
+</td><td></td><td><input type=button value="D" onClick="{
+
+  document.getElementById('mySpan01').style.left = 
+ parseInt (document.getElementById('mySpan01').style.left) + 10
+
+ }"></td></tr>
+<tr><td></td><td><input type=button value="S" onClick="{
+
+
+  document.getElementById('mySpan01').style.top = 
+ parseInt (document.getElementById('mySpan01').style.top) + 10
+
+}"></td><td></td></tr>
+
+
+</table 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 <br><br><br>
@@ -97,5 +211,13 @@ Table In Table
 <li> India
 <li> England
 <li> Lebanon
+
+
+
+
+
+<span id="mySpan01" style="position:absolute; left:300; top:800; width:98; height:30;"> Player 1</span><br>
+
+
 
 
