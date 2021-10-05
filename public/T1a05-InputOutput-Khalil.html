@@ -1,0 +1,197 @@
+<h1 align=center> T1a05-InputOutput-Khalil</h1>
+
+<br>
+
+X^2<br>
+<input id="myNum1" type=number value="4">
+
+<input type=button value="myButton" onclick="{
+
+let myx1 = document.getElementById('myNum1').value
+document.getElementById('Div1').innerHTML = myx1*myx1
+
+}">
+
+
+<div id="Div1">..</div>
+
+<br><br>
+
+
+X<br>
+<input id="myNum2" type=number value="4">
+
+<input type=button value="myButton1" onclick="{
+
+let myx2 = document.getElementById('myNum2').value
+document.getElementById('Div3').innerHTML = myx2
+
+}">
+
+<div id="Div3">..</div>
+
+<br><br>
+
+X*Y<br>
+<input id="myNum3" type=number value="7">*<input id="myNum4" type=number value="3">
+
+<input type=button value="myButton2" onclick="{
+let myx3 = document.getElementById('myNum3').value
+let myx4 = document.getElementById('myNum4').value
+document.getElementById('Div4').innerHTML = myx3*myx4
+
+}">
+
+
+
+<div id="Div4">..</div>
+
+<br><br>
+
+
+
+
+XY<br>
+<input id="myNum5" type=number value="6">+<input id="myNum6" type=number value="8">
+
+<input type=button value="myButton3" onclick="{
+let myx5 = document.getElementById('myNum5').value
+let myx6 = document.getElementById('myNum6').value
+document.getElementById('Div5').innerHTML = myx5+myx6
+
+}">
+
+
+
+<div id="Div5">..</div>
+
+<br><br>
+
+
+
+
+
+X.0+Y.0<br>
+<input id="myNum7" type=number value="3.1"> + <input id="myNum8" type=number value="1.5">
+
+<input type=button value="myButton4" onclick="{
+let myx7 = document.getElementById('myNum7').value
+let myx8 = document.getElementById('myNum8').value
+document.getElementById('Div2').innerHTML = (parseFloat(myx7) + parseFloat(myx8))              
+
+}">
+
+
+<div id="Div2">...</div>
+
+<br><br>
+
+
+
+
+
+X+Y<br>
+<input id="myNum9" type=number value="1.1"> + <input id="myNum10" type=number value="5.5">
+
+<input type=button value="myButton" onclick="{
+let myx9 = document.getElementById('myNum9').value
+let myx10 = document.getElementById('myNum10').value
+document.getElementById('Div6').innerHTML = (parseInt(myx9) + parseInt(myx10))              
+
+}">
+
+
+<div id="Div6">...</div>
+
+<br><br>
+
+
+
+
+
+
+
+X.0-Y.0<br>
+<input id="myNum11" type=number value="3.1"> - <input id="myNum12" type=number value="2.5">
+
+<input type=button value="myButton" onclick="{
+let myx11 = document.getElementById('myNum11').value
+let myx12 = document.getElementById('myNum12').value
+document.getElementById('Div7').innerHTML = (parseFloat(myx11) - parseFloat(myx12))              
+
+}">
+
+
+<div id="Div7">...</div>
+
+<br><br>
+
+
+
+
+X-Y<br>
+<input id="myNum13" type=number value="1.1"> - <input id="myNum14" type=number value="8.5">
+
+<input type=button value="myButton" onclick="{
+let myx13 = document.getElementById('myNum13').value
+let myx14 = document.getElementById('myNum14').value
+document.getElementById('Div8').innerHTML = (parseInt(myx13) - parseInt(myx14))              
+
+}">
+
+
+<div id="Div8">...</div>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+<table border="2"> 
+<h1>
+<tr><td></td><td>
+<input type=button value="W" onClick="{ 
+
+
+  document.getElementById('Flower').style.top = 
+ parseInt (document.getElementById('Flower').style.top) - 10
+
+}">
+</td><td></td></tr>
+<tr><td>
+<input type=button value="A" onClick="{
+
+  document.getElementById('Flower').style.left = 
+ parseInt (document.getElementById('Flower').style.left) - 10
+ }">
+
+</td><td></td><td><input type=button value="D" onClick="{
+
+  document.getElementById('Flower').style.left = 
+ parseInt (document.getElementById('Flower').style.left) + 10
+
+ }"></td></tr>
+<tr><td></td><td><input type=button value="S" onClick="{
+
+
+  document.getElementById('Flower').style.top = 
+ parseInt (document.getElementById('Flower').style.top) + 10
+
+}"></td><td></td></tr>
+
+
+</table>
+
+
+<br>
+
+<img src="Profile.jfif" id="Flower" style="position:absolute; left:300;top:800;width:100;height:100;">
+
+
+
+
