@@ -1,5 +1,31 @@
 Version 0.01<br>
 <h1 align=center> T1a04-Css-Khalil</h1>
+<h2 align=center> Blue and 50% op</h2>
+
+<style>
+body {
+  background-color: red;
+ opacity: 1;
+}
+h1{
+
+background-color: green;
+  opacity: 1;
+}
+h2{
+
+background-color: blue;
+  opacity: 0.5;
+}
+
+p.dotted {border-style: dotted;}
+
+
+p.solid {border-style: solid;}
+
+</style>
+
+
 
 
 <b> this is bold
@@ -10,7 +36,37 @@ Version 0.01<br>
 <input type=button value=Change onclick="{
 
 document.getElementById('myB1').style.color = 'red'
-document.getElementById('myB1').style.backgroundcolor = 'yellow'
+document.getElementById('myB1').style.backgroundColor = 'yellow'
 
 
 }">
+ <br>
+<b style="color: #ec87d5"> This is pink </b>
+<br><br>
+<b style="color: #2454d6"> This is Blue </b>
+<br><br>
+<b style="color: #ec87d5; background-color: #2454d6; ">This is pink with blue background</b>
+<br>
+<br>
+<b style="color: #2454d6; background-color: #ec87d5; ">This is pink with blue background</b>
+<br><br>
+
+<b id="MyImage" style="color:#00ff00; background-Color:blue; "> This is bold</b>
+
+
+<input type=button value=Change onclick="{
+
+document.getElementById('MyImage').style.color = '#ec87d5'
+document.getElementById('MyImage').style.backgroundColor = '#0ffc9a'
+
+
+}">
+<br>
+
+<p class="dotted">This is a doted border</p>
+
+<p class="solid">This is a doted border</p>
+
+
+v
+</body>
