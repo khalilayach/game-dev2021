@@ -1,9 +1,10 @@
-Version 0.01<br>
+Version 0.02.0<br>
 <h1 align=center> T1a04-Css-Khalil</h1>
-<h2 align=center> Blue and 50% op</h2>
 
-<style>
+<h1 id="myB4" style="opacity: 0.5; background-color: blue;"> blue with changing opacity </h1>
+<style> 
 body {
+
   background-color: red;
  opacity: 1;
 }
@@ -68,5 +69,52 @@ document.getElementById('MyImage').style.backgroundColor = '#0ffc9a'
 <p class="solid">This is a doted border</p>
 
 
-v
+<p id="mydotted" style="border-style:dotted;"> Change This Color </p>
+
+
+<div id="myDiv1">This is a div Element</div>
+
+
+
+
+
+
+<input type=button value=SetTo1 onclick="{
+
+document.getElementById('myB4').style.opacity = 1
+
+
+}">
+
+
+<input type=button value=SetTo0.5 onclick="{
+
+document.getElementById('myB4').style.opacity = 0.5
+
+
+}">
+
+<br>
+<p id="everything" style="border-style:dotted;"> This Is EveryThing </p>
+
+<input type=button value=ChangeColorDottedLine onclick="{
+
+
+
+
+document.getElementById('mydotted').style.backgroundColor = '#0ffc9a'
+document.getElementById('mydotted').style.color = '#ec87d5'
+}">
+
+
+
+<input type=button value=DoEveryThing onclick="{
+
+document.getElementById('everything').style.backgroundColor = '#0ffc9a'
+document.getElementById('everything').style.color = 'red'
+document.getElementById('everything').style.opacity = 0.5
+}">
+
+
+
 </body>
