@@ -1,0 +1,94 @@
+<pre><b><h1 align=center>T1a06-Varaibles-Khalil </h1></b> </pre>
+
+
+
+<input id="myText" type=text value= x>
+
+<input id="MyButtonOne" type=button value="My Button" onclick="{
+
+let myX = document.getElementById('myText').value
+document.getElementById('Div1').innerHTML += myX +'<br>'
+
+
+
+}">
+
+<div id="Div1"></div>
+<br><br>
+
+
+
+
+
+<input id="myText1" type=text value= MyXValue>
+
+<input id="MyButtonOne" type=button value="My Button" onclick="{
+
+let myX = document.getElementById('myText1').value
+document.getElementById('Div2').innerHTML += myX +'<br>'
+
+
+
+}">
+
+<div id="Div2"></div>
+<br>
+
+
+
+
+
+This is True<br>
+<input id="true1" type=button value=True onclick="{
+
+document.getElementById('Div3').innerHTML = 'Correct'
+
+}">
+<input id="false1" type=button value=False onclick="{
+
+
+document.getElementById('Div3').innerHTML = 'InCorrect'
+
+
+}">
+<div id="Div3">...</div>
+
+
+
+
+
+<input id="myText4" type=number value= 12>
+
+<input id="MyButtonOne" type=button value="Submit" onclick="{
+
+let myX = document.getElementById('myText4').value
+document.getElementById('Div4').innerHTML = myX
+
+
+
+}">
+
+<div id="Div4"></div>
+<br>
+
+
+
+
+<input id="myText5" type=number value= 12>
+<input id="myText6" type=number value= 12>
+<input id="MyButtonOne" type=button value="Submit" onclick="{
+let myy = document.getElementById('myText5').value
+let myX = document.getElementById('myText6').value
+document.getElementById('Div5').innerHTML = ((parseFloat(myy)) + (parseFloat(myX)))
+
+
+
+}">
+
+<div id="Div5"></div>
+<br>
+
+
+
+
+
