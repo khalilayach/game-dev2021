@@ -1,1 +1,20 @@
-vfbzfdb
+Version 0.01 
+<h1 align=center>T1a08-loop-Khalil.html</h2>
+
+Max loops <input id="MyLOOP" type=number value="4"><br>
+
+<input type=button value="Basic For loop with Decisions" onclick="{
+let myTemp = ''
+let MyMax = document.getElementById('MyLOOP').value
+
+for(let myLoop = 0; myLoop < MyMax; myLoop++){
+myTemp += myLoop +'<br>'
+
+
+document.getElementById('myDiv01').innerHTML = myTemp
+}
+}">
+
+
+<div id ="myDiv01">..</div>
+
