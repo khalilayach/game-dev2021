@@ -5,9 +5,9 @@ Max loops <input id="MyLOOP" type=number value="4"><br>
 
 <input type=button value="Basic For loop with Decisions" onclick="{
 let myTemp = ''
-let MyMax = document.getElementById('MyLOOP').value
+let MyMax = parseInt(document.getElementById('MyLOOP').value)
 
-for(let myLoop = 0; myLoop < MyMax; myLoop++){
+for(let myLoop = 0; myLoop < MyMax+1; myLoop++){
 myTemp += myLoop +'<br>'
 
 
@@ -18,3 +18,77 @@ document.getElementById('myDiv01').innerHTML = myTemp
 
 <div id ="myDiv01">..</div>
 
+
+
+StartLoop <input id="MyLOOP1" type=number value="8"><br>
+
+<input type=button value="Basic For loop with Decisions" onclick="{
+let myTemp = ''
+let MyMax = parseInt(document.getElementById('MyLOOP1').value)
+
+for(let myLoop = MyMax; myLoop > 0-1; myLoop--){
+myTemp += myLoop +'<br>'
+
+
+document.getElementById('myDiv02').innerHTML = myTemp
+}
+}">
+
+
+<div id ="myDiv02">..</div>
+<br>
+
+
+
+StartLoop <input id="MyLOOP2" type=number value="6"><br>
+EndLoop <input id="MyLOOP3" type=number value="20"><br>
+
+<input type=button value="Basic For loop with Decisions" onclick="{
+let myTemp = ''
+let MyMax = parseInt(document.getElementById('MyLOOP3').value)
+let MyStart = parseInt(document.getElementById('MyLOOP2').value)
+
+for(let myLoop = MyStart; myLoop < MyMax+1; myLoop++){
+myTemp += myLoop +'<br>'
+
+
+document.getElementById('myDiv03').innerHTML = myTemp
+}
+}">
+
+
+<div id ="myDiv03">..</div>
+
+
+
+
+
+
+
+
+
+<br>
+
+Loop X <input id="MyLOOP8" type=number value="2"><br>
+Y Amout Of Times <input id="MyLOOP9" type=number value="3"><br>
+
+
+
+
+<input type=button value="Loop X Times" onclick="{
+let myTemp='';
+let MyMax1 = parseInt(document.getElementById('MyLOOP8').value)
+let MyMax2 = parseInt(document.getElementById('MyLOOP9').value)
+
+for(let myLoop001 = 0; myLoop001 < MyMax2; myLoop001++){
+for(let myLoop02 = 1; myLoop02 <= MyMax1; myLoop02++){
+document.getElementById('myDiv06').innerHTML = myTemp
+myTemp += + myLoop02 +' <br>';
+}
+document.getElementById('myDiv06').innerHTML = myTemp
+}
+}">
+
+
+
+<div id ="myDiv06">..</div>
