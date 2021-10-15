@@ -1,0 +1,18 @@
+<h1 align=center>T1A09-Functions-Khalil</h1>
+<script>
+function myFun1(){
+let myIn01 = parseInt(document.getElementById('myText01').value)
+return myIn01
+
+}
+</script>
+<input type=text id="myText01" value="3"><br>
+
+<input type=button value="MyButton" onclick="{
+
+document.getElementById('myDiv01').innerHTML = myFun1()
+
+
+}">
+
+<div id="myDiv01">...</div>
