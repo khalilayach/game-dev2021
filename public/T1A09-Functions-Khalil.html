@@ -5,8 +5,43 @@ let myIn01 = parseInt(document.getElementById('myText01').value)
 return myIn01
 
 }
+
+
+function myFun2(){
+let myIn01 = parseInt(document.getElementById('myText02').value)
+return myIn01 
+
+}
+
+
+
+function mySwitchText(){
+
+
+
+document.getElementById('myText02').value = 965
+
+document.getElementById('myText01').value = 444
+
+}
+
+
+function myFunRandom(){
+
+
+document.getElementById('myText04').value = Math.floor((Math.random() * 100) + 1);
+
+return myx
+
+
+
+}
+
+
 </script>
-<input type=text id="myText01" value="3"><br>
+
+Print Function 1
+<input type=text id="myText01" value="4"><br>
 
 <input type=button value="MyButton" onclick="{
 
@@ -16,3 +51,68 @@ document.getElementById('myDiv01').innerHTML = myFun1()
 }">
 
 <div id="myDiv01">...</div>
+
+
+<br><br>
+
+
+Print Function 2
+<input type=text id="myText02" value="6"><br>
+
+<input type=button value="MyButton" onclick="{
+
+document.getElementById('myDiv02').innerHTML = myFun2()
+
+
+}">
+
+<div id="myDiv02">...</div>
+
+
+
+
+Set Text To 3
+<input type=button value="MyButton3" onclick="{
+
+mySwitchText()
+
+}">
+
+
+
+
+<br><br>
+
+
+
+Print Function 3
+<input type=text id="myText04" value="1"><br>
+
+<input type=button value="Switch" onclick="{
+
+document.getElementById('myDiv03').innerHTML = myFunRandom()
+
+}">
+
+<div id="myDiv03">...</div>
+
+<input type=Button value="Submit" onclick="{
+
+let myx = document.getElementById('myText04').value
+
+document.getElementById('myDiv03').innerHTML = myx
+
+}"><br><br>
+
+<input type=button value="Submit All" onclick="{
+
+
+
+
+
+let myy = document.getElementById('myText04').value
+document.getElementById('myText01').value = myy
+document.getElementById('myText02').value = myy
+
+
+}">
