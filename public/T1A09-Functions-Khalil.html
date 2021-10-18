@@ -38,6 +38,44 @@ return myx
 }
 
 
+
+
+
+
+
+
+function myChangeColor(){
+
+
+document.getElementById('myChange').style.color = 'red'
+
+
+
+
+
+}
+
+
+
+
+
+
+
+function myChangeColorBack(){
+
+
+document.getElementById('myChange').style.color = 'black'
+
+
+
+
+
+}
+
+
+
+
+
 </script>
 
 Print Function 1
@@ -87,7 +125,7 @@ mySwitchText()
 
 Print Function 3
 <input type=text id="myText04" value="1"><br>
-
+<h2><b> Please press more than once </b></h2>
 <input type=button value="Switch" onclick="{
 
 document.getElementById('myDiv03').innerHTML = myFunRandom()
@@ -116,3 +154,53 @@ document.getElementById('myText02').value = myy
 
 
 }">
+
+
+<br><br>
+Change Color
+<br>
+<input type=button value="ChangeColor" onclick="{
+
+myChangeColor()
+
+}">
+
+
+<input type=button value="ChangeColor" onclick="{
+
+myChangeColorBack()
+
+}">
+
+<h2 id="myChange" style="color:black;"> Change This Color Back </h2>
+
+
+<br>
+ -----------------------Please Refresh First-----------------------<br>
+<input type=button value="DO EVERYTHING" onclick="{
+
+
+myChangeColor()
+document.getElementById('myDiv0Ev').innerHTML += myFunRandom()
+mySwitchText()
+document.getElementById('myDiv0Ev').innerHTML += myFun2()
+document.getElementById('myDiv0Ev').innerHTML += myFun1()
+}">
+
+
+
+<div id="myDiv0Ev"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
