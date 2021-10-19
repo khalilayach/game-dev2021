@@ -166,4 +166,85 @@ document.getElementById('myDiv07').innerHTML += myIn01 + ' Is Not Equal To Seven
 
 <div id="myDiv07"></div>
 
-<br><br><br><br>
+<br>
+<br>
+
+
+
+
+<b>If x = 2 turn red else turn blue</b>
+<br>
+
+<input id="myNum09" type=number value="2"><br>
+
+<input id="Button" type=button value="MyButton" onclick="{
+
+let myIn03 = parseFloat(document.getElementById('myNum09').value)
+
+
+
+
+if(myIn03 == 2){
+
+
+document.getElementById('blue').style.color = 'red'
+
+
+}else{
+
+document.getElementById('blue').style.color = 'blue'
+}
+
+
+
+
+}">
+
+
+<b id="blue" style="color:blue;">hi</b>
+
+
+
+<br><br>
+
+
+
+
+
+
+
+<input id="myNum11" type=number value="3"><br>
+
+<input id="Button" type=button value="MyButton" onclick="{
+
+let myIn01 = parseFloat(document.getElementById('myNum11').value)
+
+
+
+
+if(myIn01 == 2){
+
+
+document.getElementById('gray').style.color = 'red'
+
+
+}else{
+
+document.getElementById('gray').style.color = 'blue'
+}
+
+
+
+
+}">
+
+
+<b id="gray" style="color:red;">hi</b>
+
+
+
+<br>
+<br>
+<br>
+
+<br>
