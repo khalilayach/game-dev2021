@@ -1,4 +1,4 @@
-Version 0.2.0
+Version 0.01 
 <h1 align=center>T1a08-loop-Khalil.html</h2>
 
 Max loops <input id="MyLOOP" type=number value="4"><br>
@@ -92,3 +92,130 @@ document.getElementById('myDiv06').innerHTML = myTemp
 
 
 <div id ="myDiv06">..</div>
+<br><br>
+
+
+
+
+My Loop Number <br>
+Max loops <input id="MyLOOP07" type=number value="2"><br>
+
+<input type=button value="Basic For loop with Decisions" onclick="{
+let myTemp5 = ''
+let MyMax = parseInt(document.getElementById('MyLOOP07').value)
+
+for(let myLoop = 0; myLoop < MyMax+1; myLoop++){
+myTemp5 += ' my Loop Number ' + myLoop +'<br>'
+
+
+
+document.getElementById('myDiv07').innerHTML = myTemp5
+}
+}">
+
+
+<div id ="myDiv07"></div>
+<br><br>
+
+
+
+if my loop = 2 print cool <br>
+Max loops <input id="MyLOOP08" type=number value="8"><br>
+
+<input type=button value="Basic For loop with Decisions" onclick="{
+let myTemp = ''
+let MyMax = parseInt(document.getElementById('MyLOOP08').value)
+
+for(let myLoop = 0; myLoop < MyMax+1; myLoop++){
+myTemp += ' my Loop Number ' + myLoop +'<br>'
+
+if(myLoop == 1){
+myTemp += '<b> cool </b>'
+
+}
+
+document.getElementById('myDiv08').innerHTML = myTemp
+}
+}">
+
+
+<div id ="myDiv08"></div>
+
+
+
+
+<br><br>
+
+
+my loop % 2 <br>
+Max loops <input id="MyLOOP09" type=number value="6"><br>
+
+<input type=button value="Basic For loop with Decisions" onclick="{
+let myTemp = ''
+let MyMax = parseInt(document.getElementById('MyLOOP09').value)
+
+for(let myLoop = 0; myLoop < MyMax+1; myLoop++){
+myTemp += ' my Loop Number ' + myLoop +'<br>'
+
+if(myLoop % 2){
+myTemp += '<b> cool </b>'
+
+}
+
+document.getElementById('myDiv09').innerHTML = myTemp
+}
+}">
+
+
+<div id ="myDiv09"></div>
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+my loop % 6 <br>
+Max loops <input id="MyLOOP10" type=number value="20"><br>
+
+<input type=button value="Basic For loop with Decisions" onclick="{
+let myTemp = ''
+let MyMax = parseInt(document.getElementById('MyLOOP10').value)
+
+for(let myLoop = 0; myLoop < MyMax+1; myLoop++){
+myTemp += ' my Loop Number ' + myLoop +'<br>'
+
+if(myLoop % 6){
+myTemp += '<b> cool </b>'
+
+}
+
+document.getElementById('myDiv10').innerHTML = myTemp
+}
+}">
+
+
+<div id ="myDiv10"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
