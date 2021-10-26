@@ -1,0 +1,105 @@
+<h1 align=center>T1A10-Events-Khalil</h1>
+
+
+<script>
+
+function myalert(){
+document.getElementById('myDiv06').innerHTML += 'You Scrolled'+ '<br>'
+}
+
+
+</script>
+
+
+<br><br>
+<b>On Click: "Hold Left Click Then Compare To On On Mouse Down" </b><br>
+<input type=button value="button" onclick="{
+
+document.getElementById('myDiv01').innerHTML = 'This Was On Click'
+
+
+}">
+
+<div id="myDiv01">..</div>
+
+<br><br>
+<b>Hover Enter:</b><br>
+<input type=button value="button" onmouseover="{
+
+document.getElementById('myDiv02').innerHTML = 'This Was On Hoverd Over'
+
+
+}">
+
+<div id="myDiv02">..</div>
+
+<br><br>
+<b>Hover Exit:</b><br>
+<input type=button value="button" onmouseout="{
+
+document.getElementById('myDiv03').innerHTML = 'This Was Exited'
+
+
+}">
+
+<div id="myDiv03">..</div>
+
+<br><br>
+<b>On Mouse Down When Pressed: "Hold Left Click Then Compare To On Click" </b><br>
+<input type=button value="button" onmousedown="{
+
+document.getElementById('myDiv04').innerHTML = 'This Was Exited'
+
+
+}">
+
+<div id="myDiv04">..</div>
+
+
+
+
+<br><br>
+<b>OnKeyPress: </b><br>
+
+<input type="text" onkeypress="{
+
+document.getElementById('myDiv05').innerHTML = 'This Was Pressed'
+
+}">
+
+<div id="myDiv05">..</div>
+
+
+
+<br><br>
+
+<b>On Scroll</b>
+<div style="border: 1px solid; width: 100; height:100; overflow: scroll;" onscroll="myalert()" > hi<br><br><br>hi<br><br><br> </div>
+
+<div id="myDiv06">..</div>
+
+<br><br>
+<b>On Copie</b><br>
+<input type=text value=COPY ME oncopy="{
+
+document.getElementById('myDiv07').innerHTML = 'This Was Copied'
+
+
+
+}">
+<div id="myDiv07">..</div>
+
+
+
+
+<br><br>
+<b>On Paste</b><br>
+<input type=text value=PASTE HERE onpaste="{
+
+document.getElementById('myDiv08').innerHTML = 'This Was Pasted'
+
+
+
+}">
+<div id="myDiv08">..</div>
+
