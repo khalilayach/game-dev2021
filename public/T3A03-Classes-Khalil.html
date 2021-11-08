@@ -1,0 +1,26 @@
+Version 0.01
+<h2 align=center>T2A03-Classes-By-Khalil</h2>
+
+Name <input type=text id="myText01" value="Khalil"><br>
+
+Age <input type=text id="myText02" value="16"><br>
+<input type=button value="ExampleClass" onClick="{
+let x = document.getElementById('myText01').value
+let y = document.getElementById('myText02').value
+class myAnimal{
+constructor(passName,passAge){
+this.myName = passName;
+this.myAge = passAge
+
+}
+
+myShow(){
+document.getElementById('myDiv01').innerHTML = 'Hello ' + this.myName + ' You Are ' + this.myAge + ' Yearsold<br> '
+}
+}
+myDog = new myAnimal( x, y)
+myDog.myShow()
+
+}">
+
+<div id="myDiv01">...</div>
