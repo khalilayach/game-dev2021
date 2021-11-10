@@ -41,3 +41,31 @@ myDog.myShow()
 
 
 <button onclick="myFunction()">Try it</button>
+
+<br><br>
+</////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////>
+
+Name <input type=text id="myText03" value="Fluffy"><br>
+
+Age <input type=text id="myText04" value="14"><br>
+<input type=button value="ExampleClass" onClick="{
+let x = document.getElementById('myText03').value
+let y = document.getElementById('myText04').value
+class myAnimal{
+constructor(passName,passAge){
+this.myName = passName;
+this.myAge = passAge
+
+}
+
+myShow(){
+document.getElementById('myDiv02').innerHTML =  this.myName + 'is a great cat who is ' + this.myAge + ' Yearsold<br> '
+}
+}
+myDog = new myAnimal( x, y)
+myDog.myShow()
+
+}">
+
+<div id="myDiv02">...</div>
+<br><br>
