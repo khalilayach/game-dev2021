@@ -1,0 +1,126 @@
+Version 0.01
+
+<script>
+function myFunction() {
+  var x = document.getElementsByClassName("example");
+  x[0].style.backgroundColor = "yellow";
+}
+</script>
+
+
+<h2 align=center>T2A03-Classes-Extended-By-Khalil</h2>
+
+Name <input type=text id="myText01" value="Khalil"><br>
+
+Age <input type=text id="myText02" value="16"><br>
+<input type=button value="ExampleClass" onClick="{
+let x = document.getElementById('myText01').value
+let y = document.getElementById('myText02').value
+class myAnimal{
+constructor(passName,passAge){
+this.myName = passName;
+this.myAge = passAge
+
+}
+
+myShow(){
+document.getElementById('myDiv01').innerHTML = 'Hello ' + this.myName + ' You Are ' + this.myAge + ' Yearsold<br> '
+}
+}
+myDog = new myAnimal( x, y)
+myDog.myShow()
+
+}">
+
+<div id="myDiv01">...</div>
+<br><br>
+</////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////>
+
+<div class="example">My Class</div>
+
+
+
+<button onclick="myFunction()">Try it</button>
+
+<br><br>
+</////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////>
+
+Name <input type=text id="myText03" value="Fluffy"><br>
+
+Age <input type=text id="myText04" value="14"><br>
+<input type=button value="ExampleClass" onClick="{
+let x = document.getElementById('myText03').value
+let y = document.getElementById('myText04').value
+class myAnimal{
+constructor(passName,passAge){
+this.myName = passName;
+this.myAge = passAge
+
+}
+
+myShow(){
+document.getElementById('myDiv02').innerHTML =  this.myName + 'is a great cat who is ' + this.myAge + ' Yearsold<br> '
+}
+}
+myDog = new myAnimal( x, y)
+myDog.myShow()
+
+}">
+
+<div id="myDiv02">...</div>
+<br><br>
+
+</////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////>
+
+Name <input type=text id="myText05" value="Name"><br>
+
+Age <input type=text id="myText06" value="77"><br>
+<input type=button value="ExampleClass" onClick="{
+let x = document.getElementById('myText05').value
+let y = document.getElementById('myText06').value
+class myAnimal{
+constructor(passName,passAge){
+this.myName = passName;
+this.myAge = passAge
+
+}
+
+myShow(){
+document.getElementById('myDiv03').innerHTML =  'Hello ' + this.myName + ' You Are ' + this.myAge + ' Years old<br> '
+}
+}
+myDog = new myAnimal( x, y)
+myDog.myShow()
+
+}">
+
+<div id="myDiv03">...</div>
+<br><br>
+</////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////>
+
+Name <input type=text id="myText07" value="Name"><br>
+BirthPlace <input type=text id="myText09" value="location"><br>
+Age <input type=text id="myText08" value="21"><br>
+<input type=button value="ExampleClass" onClick="{
+let x = document.getElementById('myText07').value
+let y = document.getElementById('myText08').value
+let z = document.getElementById('myText09').value
+class myAnimal{
+constructor(passName,passAge,passBirth){
+this.myName = passName;
+this.myAge = passAge;
+this.myBirth = passBirth
+
+}
+
+myShow(){
+document.getElementById('myDiv04').innerHTML =  'Hello ' + this.myName + ' You Are ' + this.myAge + ' Years old and Was Born in ' + this.myBirth
+}
+}
+myDog = new myAnimal( x, y , z)
+myDog.myShow()
+
+}">
+
+<div id="myDiv04">...</div>
+<br><br>
