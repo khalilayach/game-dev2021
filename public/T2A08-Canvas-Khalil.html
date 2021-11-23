@@ -36,14 +36,6 @@ You use loops and variables to make fast fancy drawings <br><br>
    myContext.stroke();
 }">
 
-
-<input type=button value="Custom" onclick="{
-   myContext.fillRect(20, 20, 50, 50)
-}"><br><br>
-
-
-
-
 <input type=button value=".createLinearGradient(100, 300, 200, 400)" onclick="{
    let myGradient = myContext.createLinearGradient(100, 300, 200, 400);
    myGradient.addColorStop(0, 'red');
@@ -64,6 +56,12 @@ You use loops and variables to make fast fancy drawings <br><br>
 }"><br><br>
 
 
+<input type=button value="MY BUTTON PLZ PRESS" onclick="{
+myContext.clearRect(0, 0, myCanvas.width, myCanvas.height);  
+myWorld()
+   
+}"><br><br>
+
 
 <canvas id="myCoolTag" width="1000" height="600" style="border:1px solid #000000;"></canvas>
 
@@ -71,4 +69,109 @@ You use loops and variables to make fast fancy drawings <br><br>
    // set up global variables
    let myCanvas=document.getElementById('myCoolTag');
    let myContext=myCanvas.getContext('2d');
+
+
+function myBlender(xpos,ypos,width,height){
+
+
+
+console.log(xpos + ypos + width + height);
+myContext.beginPath();
+myContext.fillRect(xpos,ypos,width,height)
+myContext.stroke();
+}
+
+
+
+function myWorld(){
+
+
+let mymax = 600
+let mymin = 0
+
+let mymaxShape = 200
+let myminShape = 32
+
+
+
+
+
+
+let MyX = 0
+let MyY = 0
+
+
+
+
+
+
+const array1 = [0, 0,'20','20'];
+const array2 = [0, 0,'30','40'];
+const array3 = [0, 0,'30','40'];
+const array4 = ['200', '40','90','60'];
+const array5 = ['10', '10','30','40'];
+const array6 = ['0', '0','30','40'];
+const array7 = ['89', '69','42','8000'];
+const array8 = ['400', '200','30','40'];
+const array9 = ['367', '80','30','40'];
+const array10 = ['26', '30','30','40'];
+const array11 = ['32', '89','30','40'];
+const array12 = ['32', '89','30','40'];
+const array13 = ['32', '89','30','40'];
+const array14 = ['32', '89','30','40'];
+const array15 = ['32', '89','30','40'];
+const array16 = ['32', '89','30','40'];
+
+
+const myArrayComb = array1.concat(array2,array3,array4,array5,array6,array7,array8,array9,array10,array11,array12,array13,array14,array15,array16)
+
+x = 0
+y = 0
+wid = 0
+hei = 0
+
+Temp = 0
+myArrayComb.forEach((item, index) => {
+  Temp += 1
+
+  if(Temp == 1){
+     console.log('X' + item);
+     item = Math.floor(Math.random() * (mymax) + (mymin));
+     x =  item
+
+     }
+  if(Temp == 2){
+     console.log('Y'+ item);
+     item = Math.floor(Math.random() * (mymax) + (mymin));
+     y = item
+     }
+  if(Temp == 3){
+     item  = Math.floor(Math.random() * (mymaxShape) + (myminShape));
+     console.log('width'+ item);
+     wid = item
+     }
+  if(Temp == 4){
+     item = Math.floor(Math.random() * (mymaxShape) + (myminShape));
+     console.log('hight'+ item);
+     hei = item
+     }
+  if(Temp >= 4){
+     myBlender(x,y,wid,hei)
+     Temp = 0}
+     
+
+});
+
+
+
+
+
+
+
+
+
+}
+
+
+
 </script>
