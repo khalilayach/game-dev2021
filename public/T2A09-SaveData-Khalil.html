@@ -1,0 +1,99 @@
+
+<h2>t2a09-local-storage-name by Fred. Instructions:</h2>
+
+<body onload="{
+myLevelStorage = localStorage.getItem('Level')
+myHealthStorage = localStorage.getItem('Health')
+   myStorage1 = localStorage.getItem('myOther')
+   myStorage = localStorage.getItem('myStoredText')
+   if(myStorage  != null){
+      document.getElementById('myText1').value = myStorage 
+    }
+   if(myStorage1  != null){
+      document.getElementById('myText01').value = myStorage1
+    }
+
+
+if(myHealthStorage != null){
+document.getElementById('myHealth').value = myHealthStorage
+}
+
+if(myLevelStorage != null){
+document.getElementById('myLevels').value = myLevelStorage
+}
+
+
+
+
+}">
+
+<body onunload="{
+   localstorage.setItem('myStoredText',document.getElementById('myText1').value)
+   localstorage.setItem('myOther',document.getElementById('myText01').value)
+}">   
+<br><br>
+Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
+
+<input type="button" value="Store Text" onClick="{
+   localStorage.setItem('myStoredText', document.getElementById('myText1').value)
+   alert(document.getElementById('myText1').value + ' \nHas been stored')
+   document.getElementById('myText1').value = ''
+}">
+
+ <br><br>
+
+<input id="myText01" type="Text" value="8">
+
+<input type="Button" value="Submit" onClick="{
+  localStorage.setItem('myOther', document.getElementById('myText01').value)
+  alert(document.getElementById('myText01').value + ' \nHas been stored')
+  document.getElementById('myText01').value = ''
+}">
+
+<input type="button" value="Retrieve Text" onClick="{
+   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
+   document.getElementById('myText01').value = localStorage.getItem('myOther')
+}">
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+Health<input id="myHealth" type="text" value="100">
+
+<br>
+<input type="button" value="TakeDamage" onClick="{
+
+document.getElementById('myHealth').value -= 10
+localStorage.setItem('Health',document.getElementById('myHealth').value)
+}">
+
+<br>
+<input type="button" value="GainHealth" onClick="{
+
+document.getElementById('myHealth').value -= -5
+localStorage.setItem('Health',document.getElementById('myHealth').value)
+}">
+
+
+
+
+
+<br><br>
+Level<input type="text" id="myLevels" value=1>
+<br>
+<input type="button" value="Gain A Level" onClick="{
+document.getElementById('myLevels').value -= -1
+localStorage.setItem('Level',document.getElementById('myLevels').value)
+
+}">
+
+
