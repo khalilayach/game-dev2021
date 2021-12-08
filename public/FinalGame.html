@@ -10,7 +10,7 @@
 
 
 <script>
-
+let myClock
 
 const array1 = ['0', '0','32','32'];
 const array2 = ['38','0','32','32'];
@@ -28,6 +28,33 @@ hei = 0
 
 
 
+function myRight(){
+myClock = setInterval(function(){
+myx += 1
+},5)
+}
+function myUp(){
+
+myClock = setInterval(function(){
+myy -= 1
+},5)
+
+}
+function myLeft(){
+
+myClock = setInterval(function(){
+myx -= 1
+},5)
+
+}
+function myDown(){
+
+
+myClock = setInterval(function(){
+myy += 1
+},5)
+
+}
 
 
 
@@ -40,8 +67,6 @@ hei = 0
 
 
 
-
-  let myClock
   myx = 268
   myy = 560
   var myCanvas = document.getElementById("myCoolTag");
@@ -51,10 +76,10 @@ hei = 0
    var img = document.getElementById("myIm");
    document.addEventListener('keydown', function(event){
   
-   if(event.key === 'd'){myx += 20}
-   if(event.key === 'a'){myx -= 20}
-   if(event.key === 's'){myy += 20}
-   if(event.key === 'w'){myy -= 20}
+   if(event.key === 'd'){myRight()}
+   if(event.key === 'a'){myLeft()}
+   if(event.key === 's'){myDown()}
+   if(event.key === 'w'){myUp()}
 
 
 })
@@ -132,6 +157,7 @@ myArrayComb.forEach((item, index) => {
 
 
 </script>
+
 
 
 
