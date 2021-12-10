@@ -1,0 +1,84 @@
+
+<h1 align=center>t2a12 Sort by Khalil From Scratch</h1>
+
+
+
+
+
+
+
+
+<script>
+//My ArrayTaker
+let arraytaker = ["0"]
+//My Arrays
+array1 = [1,8,9]
+array2 = [7,2,6]
+array3 = [8,23,63]
+array4 = [63,74,70]
+array5 = [67,24,679]
+array6 = [188,123,111]
+array7 = [3,23,66]
+array8 = [28,600,23]
+array9 = [68,123,111]
+array10 = [97,512,143]
+array11 = [175,123,33]
+array12 = [11,123,111]
+array13 = [15,128,121]
+array14 = [98,123,191]
+array15 = [88,13,131]
+array16 = [81,28,111]
+array17 = [95,321,455]
+array18 = [200,111,694]
+array19 = [321,554,161]
+array20 = [412,194,121]
+array21 = [21,155,11]
+/////// You can addd More Arrays If You want to
+/////// New Arrays Must Be Between 0 and 1000
+
+
+//Please Count How many values there are and place that number in here
+
+//ArrayCombiner
+////For each Value In Array Combiner See If It Is Equal To myTemp
+//////Just Remember New Arrays Are Added Here -------------------- V 
+const myArrayComb = array1.concat(array2,array3,array4,array5,array6,array7,array8,array9,array10,array11,array12,array13,array14,array15,array16,array17,array18,array19,array20,array21)
+
+
+
+
+// Loops Through all Values in ArrayCombiner
+for(let myloop = 0; myloop < 1000; myloop++){
+
+myArrayComb.forEach((item, index) => { 
+
+if(myloop == item){
+console.log(item)
+arraytaker.push(item)
+}
+
+});
+
+
+}
+
+// Example Of How it works
+// Sets myLoop To Zero Then For Each value in Array Comb Checks If It Is Equal To myLoop If It Is Print It OtherWise Add 1 To myLoop
+
+
+
+</script>
+
+<input value="MyArraySorter" type="button" onClick="{
+console.log(arraytaker)
+document.getElementById('MyArray').innerHTML = arraytaker
+
+
+
+}">
+
+
+
+
+<div id=MyArray></div>
+
