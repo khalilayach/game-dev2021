@@ -1,0 +1,73 @@
+
+<canvas id="myCoolTag" width="600" height="600" style="border:1px solid #000000; align:center;"></canvas>
+
+<script>
+let myClock
+
+var myCanvas = document.getElementById("myCoolTag");
+var myContext = myCanvas.getContext("2d");
+
+
+myxpos = 0
+myypos = 0
+movingRight = 0
+movingDown = 0
+movingLeft = 0
+movingUp = 0
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////STARTS HERE//////////////
+function Update(){
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+myContext.fillStyle = "Black";
+myContext.fillRect(0,0,600,600)
+
+//////////////////////////////////////PLAYER///////////////////////////////
+myContext.fillStyle = "Red";
+myContext.fillRect(myxpos,myypos,32,32)
+///////////////////KEY DOWN///
+document.addEventListener('keydown', function(event){
+if(event.key == 'd'){movingRight = 1}
+if(event.key == 's'){movingDown = 1}
+if(event.key == 'a'){movingLeft = 1}
+if(event.key == 'w'){movingUp = 1}
+})
+
+/////////////////KEY UP///
+document.addEventListener('keyup', function(event){
+if(event.key == 'd'){movingRight = 0}
+if(event.key == 's'){movingDown = 0}
+if(event.key == 'a'){movingLeft = 0}
+if(event.key == 'w'){movingUp = 0}
+
+})
+
+
+if(movingRight == 1){myxpos += 12}
+if(movingDown == 1){myypos += 12}
+if(movingLeft == 1){myxpos -= 12}
+if(movingUp == 1){myypos -= 12}
+
+////////////////////////////////////////////////////////////////ENDS HERE//////////////
+},10)
+}
+
+
+
+Update()
+
+
+
+
+</script>
