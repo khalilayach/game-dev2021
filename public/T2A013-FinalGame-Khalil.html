@@ -19,10 +19,80 @@ movingUp = 0
 
 
 
+function CollisionBox(my1x, my1y, my1width, my1height,my2x,my2y,my2width,my2height){
 
 
 
 
+
+
+myContext.fillStyle = "Yellow";
+myContext.fillRect(my1x,my1y,8,32)
+myContext.fillRect(my1x+my1width,my1y,-32,8)
+myContext.fillRect(my1x,my1y+my1height-8,32,8)
+myContext.fillRect(my1x+my1width-8,my1y+my1height,8,-32)
+
+
+
+myContext.fillRect(my2x,my2y,8,32)
+myContext.fillRect(my2x+my2width,my2y,-32,8)
+myContext.fillRect(my2x,my2y+my2height-8,32,8)
+myContext.fillRect(my2x+my2width-8,my2y+my2height,8,-32)
+
+
+
+
+
+//Left
+
+if(my1x + 32 >= my2x && my1x <= my2x + 32 && my1y + 8 >= my2y && my1y <= my2y + 8){
+
+movingLeft = 0
+}
+
+
+
+//Right
+
+if(my1x+my1width-8 - 32 >= my2x+my2width-8 && my1x+my1width-8 <= my2x+my2width-8 - 32 && my1y+my1height + 8 >= my2y+my2height && my1y+my1height <= my2y+my2height + 8){
+
+movingRight = 0
+console.log("Hit")
+}
+
+
+//Up
+
+
+
+
+
+
+Left1 = (my2x,my2y,8,32)
+Top1 = (my2x+my2width,my2y,-32,8)
+Down1 = (my2x,my2y+my2height-8,32,8)
+Right1 = (my2x+my2width-8,my2y+my2height,8,-32)
+
+
+Left = (my1x,my1y,8,32)
+Top = (my1x+my1width,my1y,-32,8)
+Down = (my1x,my1y+my1height-8,32,8)
+Right = (my1x+my1width-8,my1y+my1height,8,-32)
+
+
+if((my1x+my1width) + 8 >= (my2x+my2width) && (my1x+my1width) <= (my2x+my2width) + 8 && my2y + -32 >= my2y && my1y <= my2y + -32){
+
+console.log("TOP")
+}
+
+
+
+
+//Down
+
+
+
+}
 
 
 
@@ -32,6 +102,58 @@ function Update(){
   myClock = setInterval(function(){
 myContext.fillStyle = "Black";
 myContext.fillRect(0,0,600,600)
+
+////////////////////////////////////////////GREEN BOX/////////////////////////////////
+
+myContext.fillStyle = "Green";
+myContext.fillRect(300,250,32,32)
+
+
+//////////////////////////////////////PLAYER///////////////////////////////
+myContext.fillStyle = "Red";
+myContext.fillRect(myxpos,myypos,32,32)
+
+///////////////////KEY DOWN///
+document.addEventListener('keydown', function(event){
+if(event.key == 'd'){movingRight = 1}
+if(event.key == 's'){movingDown = 1}
+if(event.key == 'a'){movingLeft = 1}
+if(event.key == 'w'){movingUp = 1}
+})
+
+CollisionBox(myxpos,myypos,32,32,300,250,32,32)
+/////////////////KEY UP///
+document.addEventListener('keyup', function(event){
+if(event.key == 'd'){movingRight = 0}
+if(event.key == 's'){movingDown = 0}
+if(event.key == 'a'){movingLeft = 0}
+if(event.key == 'w'){movingUp = 0}
+
+})
+
+
+if(movingRight == 1){myxpos += 5}
+if(movingDown == 1){myypos += 5}
+if(movingLeft == 1){myxpos -= 5}
+if(movingUp == 1){myypos -= 5}
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////ENDS HERE//////////////
+},10)
+}
+
+
+
+Update()
+
+
+
+
+</script>
 
 //////////////////////////////////////PLAYER///////////////////////////////
 myContext.fillStyle = "Red";
