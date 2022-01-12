@@ -21,20 +21,21 @@ maxbullets = 5
 currentbullets = 0
 mystarttime = 25
 mycurrenttime = 0
-mybosshealth = 100
+mybosshealth = 50
 mybossx = 250
 mybossy = 0
 movingright = true
 stop = false
 hismovespeed = 4
-timetoshoot = 80
-currenttimetoshoot = 80
+timetoshoot = Math.floor((Math.random() * 80) + 20)
+currenttimetoshoot = timetoshoot
 lazerx = -200
 goingtoshoot = 0
 lazerstop = 20
 currenttimetostop = 20
 lazerlevel = 0
 lazerysize = 16
+colorGreen = "Green"
 
 function CollisionBox(x1,y1,width1,height1,x2,y2,width2,height2){
 
@@ -56,7 +57,13 @@ function Update(){
 
 
 
+if(currenttimetoshoot <= 15){
+colorGreen = "Yello"
 
+}else{
+colorGreen = "Green"
+
+}
 
 
 
@@ -77,7 +84,7 @@ myContext.fillRect(lazerx,32,lazerysize,600)
 ////////////////////////////////////////////GREEN BOX/////////////////////////////////
 
 
-myContext.fillStyle = "Green";
+myContext.fillStyle = colorGreen;
 myContext.fillRect(mybossx,mybossy,32,32)
 
 
@@ -91,6 +98,7 @@ myContext.fillRect(myxpos,myypos,32,32)
 currenttimetoshoot -= 0.2
 
 if(currenttimetoshoot <= 0){
+timetoshoot = Math.floor((Math.random() * 80) + 20)
 hismovespeed = 2
 lazerx = mybossx+12
 currenttimetostop -= 0.2
@@ -108,8 +116,8 @@ lazerlevel += 1
 ///LEVEL 2
 if(currenttimetoshoot <= 0 && lazerlevel == 3){
 hismovespeed = 2
-lazerx = mybossx
-lazerysize = 32
+lazerx = mybossx - 100
+lazerysize = 200
 currenttimetostop -= 0.2
 if(currenttimetostop <= 0){
 lazerx = -200
