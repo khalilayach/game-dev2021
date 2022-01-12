@@ -1,4 +1,5 @@
 
+
 <canvas id="myCoolTag" width="600" height="600" style="border:1px solid #000000; align:center;"></canvas>
 
 <script>
@@ -24,7 +25,16 @@ mybosshealth = 100
 mybossx = 250
 mybossy = 0
 movingright = true
-
+stop = false
+hismovespeed = 4
+timetoshoot = 80
+currenttimetoshoot = 80
+lazerx = -200
+goingtoshoot = 0
+lazerstop = 20
+currenttimetostop = 20
+lazerlevel = 0
+lazerysize = 16
 
 function CollisionBox(x1,y1,width1,height1,x2,y2,width2,height2){
 
@@ -58,6 +68,11 @@ mycurrenttime -= 0.5
 myContext.fillStyle = "Black";
 myContext.fillRect(0,0,600,600)
 
+
+//LAZER/////////////
+myContext.fillStyle = "Yellow";
+myContext.fillRect(lazerx,32,lazerysize,600)
+
 //////////////////////////////////////
 ////////////////////////////////////////////GREEN BOX/////////////////////////////////
 
@@ -71,6 +86,49 @@ myContext.fillRect(mybossx,mybossy,32,32)
 
 myContext.fillStyle = "Red";
 myContext.fillRect(myxpos,myypos,32,32)
+
+//Shooting Lazer
+currenttimetoshoot -= 0.2
+
+if(currenttimetoshoot <= 0){
+hismovespeed = 2
+lazerx = mybossx+12
+currenttimetostop -= 0.2
+if(currenttimetostop <= 0){
+lazerx = -200
+currenttimetostop = lazerstop
+currenttimetoshoot = timetoshoot 
+console.log(lazerlevel)
+hismovespeed = 4
+lazerlevel += 1
+}
+}
+
+
+///LEVEL 2
+if(currenttimetoshoot <= 0 && lazerlevel == 3){
+hismovespeed = 2
+lazerx = mybossx
+lazerysize = 32
+currenttimetostop -= 0.2
+if(currenttimetostop <= 0){
+lazerx = -200
+currenttimetostop = lazerstop
+currenttimetoshoot = timetoshoot
+
+console.log(lazerlevel)
+
+}
+
+}
+
+
+if(lazerlevel == 4){
+lazerysize = 16
+lazerlevel = 0
+
+}
+
 
 
 //////////////////////////////////////Bot////////////////////
@@ -131,15 +189,91 @@ if(CollisionBox(myxspawnpoint,myyspawnpoint,2,8,mybossx,mybossy,32,32)){
 console.log(mybosshealth)
 mybosshealth -= 1
 }
+if(mybosshealth <= 0){WinGame()}
 
-mybossx += 4
+//around///
+myContext.fillStyle = "Red";
+myContext.fillRect(0,0,2,600)
+myContext.fillRect(598,0,2,600)
+myContext.fillRect(0,598,600,2)
+myContext.fillRect(0,0,600,2)
 
+if(CollisionBox(0,0,2,600,myxpos,myypos,32,32)){
+Loss()
+}
+
+if(CollisionBox(598,0,2,600,myxpos,myypos,32,32)){
+Loss()
+}
+
+if(CollisionBox(0,598,600,2,myxpos,myypos,32,32)){
+Loss()
+}
+if(CollisionBox(0,0,600,2,myxpos,myypos,32,32)){
+Loss()
+}
+
+//Moving Right and left 
+
+
+if(CollisionBox(540,0,2,600,mybossx,mybossy,32,32)){
+movingright = false
+}
+
+if(CollisionBox(60,0,2,600,mybossx,mybossy,32,32)){
+movingright = true
+}
+
+
+if(CollisionBox(lazerx,0,lazerysize,600,myxpos,myypos,32,32)){
+Loss()
+}
+
+
+if(movingright == true){
+mybossx += hismovespeed
+}else{
+
+mybossx -= hismovespeed
+}
 
 ////////////////////////////////////////////////////////////////ENDS HERE//////////////
 },10)
 }
 
 
+function WinGame(){
+
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+
+movingRight = 0
+movingDown = 0
+movingLeft = 0
+movingUp = 0
+
+
+
+hismovespeed = 0
+},10)
+}
+
+function Loss(){
+
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+
+movingRight = 0
+movingDown = 0
+movingLeft = 0
+movingUp = 0
+
+
+
+hismovespeed = 0
+},10)
+
+}
 
 Update()
 
