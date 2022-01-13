@@ -1,0 +1,480 @@
+
+
+<canvas id="myCoolTag" width="600" height="600" style="border:1px solid #000000; align:center;"></canvas>
+
+<script>
+let myClock
+
+var myCanvas = document.getElementById("myCoolTag");
+var myContext = myCanvas.getContext("2d");
+
+
+myxpos = 250
+myypos = 300
+movingRight = 0
+movingDown = 0
+movingLeft = 0
+movingUp = 0
+myyspawnpoint = 20000
+myxspawnpoint = -400
+maxbullets = 5
+currentbullets = 0
+mystarttime = 25
+mycurrenttime = 0
+mybosshealth = 25
+mybossx = 250
+mybossy = 0
+movingright = true
+stop = false
+hismovespeed = 4
+timetoshoot = Math.floor((Math.random() * 80) + 20)
+currenttimetoshoot = timetoshoot
+lazerx = -200
+goingtoshoot = 0
+lazerstop = 20
+currenttimetostop = 20
+lazerlevel = 0
+lazerysize = 16
+colorGreen = "Green"
+RandomLaz1 = Math.floor((Math.random() * 5) +1)
+RandomLaz2 = Math.floor((Math.random() * 5) +1)
+picklazerstime = 35
+picklazers = 35
+activerundown = 10
+activecurrent = 10
+stop = 15
+currentstop = 15
+//1
+color1 = "Blue"
+active1 = false
+lazery1 = 600
+//2
+color2 = "Blue"
+active2 = false
+lazery2 = 600
+//3
+color3 = "Blue"
+active3 = false
+lazery3 = 600
+//4
+color4 = "Blue"
+active4 = false
+lazery4 = 600
+//5
+color5 = "Blue"
+active5 = false
+lazery5 = 600
+//7
+color6 = "Blue"
+active6 = false
+function CollisionBox(x1,y1,width1,height1,x2,y2,width2,height2){
+
+if(x1 + width1 >= x2 &&
+   x1 <= x2 + width2 &&
+   y1 + height1 >= y2 &&
+   y1 <= y2 + height2){
+   return true;
+}else{return false;}
+
+}
+
+//////////////////////////STARTS HERE//////////////
+function Update(){
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+
+picklazers -= 0.05
+
+if(picklazers <= 0){
+RandomLaz2 = Math.floor((Math.random() * 5) +1)
+RandomLaz1 = Math.floor((Math.random() * 5) +1)
+console.log(RandomLaz1)
+console.log(RandomLaz2)
+if(RandomLaz1 == 1){
+color1 = "Yellow" 
+active1 = true
+}
+
+if(RandomLaz1 == 2){
+color2 = "Yellow" 
+active2 = true
+}
+
+if(RandomLaz1 == 3){
+color3 = "Yellow" 
+active3 = true
+}
+
+if(RandomLaz1 == 4){
+color4 = "Yellow" 
+active4 = true
+}
+
+if(RandomLaz1 == 5){
+color5 = "Yellow" 
+active5 = true
+}
+
+
+if(RandomLaz1 == 6){
+color6 = "Yellow" 
+active6 = true
+}
+///////RANDOM2/////////////////
+
+
+
+if(RandomLaz2 == 1){
+color1 = "Yellow" 
+active1 = true
+}
+
+if(RandomLaz2 == 2){
+color2 = "Yellow" 
+active2 = true
+}
+
+if(RandomLaz2 == 3){
+color3 = "Yellow" 
+active3 = true
+}
+
+if(RandomLaz2 == 4){
+color4 = "Yellow" 
+active4 = true
+}
+
+if(RandomLaz2 == 5){
+color5 = "Yellow" 
+active5 = true
+}
+
+
+if(RandomLaz2 == 6){
+color6 = "Yellow" 
+active6 = true
+}
+
+picklazers = picklazerstime
+}
+
+
+if(active1 == true){
+currentstop -= 0.1
+activecurrent -= 0.1
+if(activecurrent <= 0){
+lazery1 = 100
+if(currentstop <= 0){
+color1 = "Blue"
+lazery1 = 600
+active1 = false
+currentstop = 15
+}}}
+
+
+
+if(active2 == true){
+currentstop -= 0.1
+activecurrent -= 0.1
+if(activecurrent <= 0){
+lazery2 = 200
+if(currentstop <= 0){
+color2 = "Blue"
+lazery2 = 600
+active2 = false
+currentstop = 15
+}}}
+
+
+if(active3 == true){
+currentstop -= 0.1
+activecurrent -= 0.1
+if(activecurrent <= 0){
+lazery3 = 300
+if(currentstop <= 0){
+color3 = "Blue"
+lazery3 = 600
+active3 = false
+currentstop = 15
+}}}
+
+if(active4 == true){
+currentstop -= 0.1
+activecurrent -= 0.1
+if(activecurrent <= 0){
+lazery4 = 400
+if(currentstop <= 0){
+color4 = "Blue"
+lazery4 = 600
+active4 = false
+currentstop = 15
+}}}
+
+
+
+if(active5 == true){
+currentstop -= 0.1
+activecurrent -= 0.1
+if(activecurrent <= 0){
+lazery5 = 500
+if(currentstop <= 0){
+color5 = "Blue"
+lazery5 = 600
+active5 = false
+currentstop = 15
+}}}
+
+myContext.fillStyle = "Black";
+myContext.fillRect(0,0,600,600)
+
+
+//LAZER/////////////
+
+
+
+
+
+
+myContext.fillStyle = "Yellow";
+myContext.fillRect(0,lazery1,600,50)
+//laz2
+myContext.fillStyle = "Yellow";
+myContext.fillRect(0,lazery2,600,50)
+
+//laz3
+myContext.fillStyle = "Yellow";
+myContext.fillRect(0,lazery3,600,50)
+
+//laz3
+myContext.fillStyle = "Yellow";
+myContext.fillRect(0,lazery4,600,50)
+
+//laz3
+myContext.fillStyle = "Yellow";
+myContext.fillRect(0,lazery5,600,50)
+
+
+
+myContext.fillStyle = color1;
+myContext.fillRect(0,100,32,50)
+
+myContext.fillStyle = color1;
+myContext.fillRect(568,100,32,50)
+
+myContext.fillStyle = color2;
+myContext.fillRect(0,200,32,50)
+
+myContext.fillStyle = color2;
+myContext.fillRect(568,200,32,50)
+
+
+myContext.fillStyle = color3;
+myContext.fillRect(0,300,32,50)
+
+myContext.fillStyle = color3;
+myContext.fillRect(568,300,32,50)
+
+
+
+myContext.fillStyle = color4;
+myContext.fillRect(0,400,32,50)
+
+myContext.fillStyle = color4;
+myContext.fillRect(568,400,32,50)
+
+
+
+
+myContext.fillStyle = color5;
+myContext.fillRect(0,500,32,50)
+
+myContext.fillStyle = color5;
+myContext.fillRect(568,500,32,50)
+
+
+
+
+myContext.fillStyle = color6;
+myContext.fillRect(0,600,32,50)
+
+myContext.fillStyle = color6;
+myContext.fillRect(568,600,32,50)
+
+
+
+if(currenttimetoshoot <= 15){
+colorGreen = "Yello"
+
+}else{
+colorGreen = "Green"
+
+}
+
+
+
+
+
+mycurrenttime -= 0.5
+
+//////////////////////////////////////
+////////////////////////////////////////////GREEN BOX/////////////////////////////////
+
+
+myContext.fillStyle = colorGreen;
+myContext.fillRect(mybossx,mybossy,80,32)
+
+
+//////////////////////////////////////PLAYER///////////////////////////////
+
+
+myContext.fillStyle = "Red";
+myContext.fillRect(myxpos,myypos,32,32)
+
+
+
+
+
+//////////////////////////////////////Bot////////////////////
+
+///////////////////KEY DOWN///
+document.addEventListener('keydown', function(event){
+if(event.key == 'd'){movingRight = 1}
+if(event.key == 's'){movingDown = 1}
+if(event.key == 'a'){movingLeft = 1}
+if(event.key == 'w'){movingUp = 1}
+if(event.key == 'f'){
+if(mycurrenttime <= 0){
+
+mycurrenttime = mystarttime
+myyspawnpoint = myypos - 8
+myxspawnpoint = myxpos + 16}}
+})
+
+if(CollisionBox(myxpos,myypos,32,32,300,250,32,32) == true){console.log('hiiiiiii')}
+/////////////////KEY UP///
+document.addEventListener('keyup', function(event){
+if(event.key == 'd'){movingRight = 0}
+if(event.key == 's'){movingDown = 0}
+if(event.key == 'a'){movingLeft = 0}
+if(event.key == 'w'){movingUp = 0}
+
+
+})
+
+
+
+if(movingRight == 1){myxpos += 5}
+if(movingDown == 1){myypos += 5}
+if(movingLeft == 1){myxpos -= 5}
+if(movingUp == 1){myypos -= 5}
+
+
+
+function bullet(){
+myContext.fillStyle = "Yellow";
+myContext.fillRect(myxspawnpoint,myyspawnpoint,8,24)
+myyspawnpoint -= 12
+}
+
+
+
+bullet()
+
+
+function createbullet(){
+bullets = new bullet()
+bullets.init()
+
+
+}
+
+if(CollisionBox(myxspawnpoint,myyspawnpoint,2,8,mybossx,mybossy,80,32)){
+console.log(mybosshealth)
+mybosshealth -= 1
+}
+if(mybosshealth <= 0){WinGame()}
+
+//around///
+myContext.fillStyle = "Red";
+myContext.fillRect(0,0,2,600)
+myContext.fillRect(598,0,2,600)
+myContext.fillRect(0,598,600,2)
+myContext.fillRect(0,0,600,2)
+
+if(CollisionBox(0,0,2,600,myxpos,myypos,32,32)){
+Loss()
+}
+
+if(CollisionBox(598,0,2,600,myxpos,myypos,32,32)){
+Loss()
+}
+
+if(CollisionBox(0,598,600,2,myxpos,myypos,32,32)){
+Loss()
+}
+if(CollisionBox(0,0,600,2,myxpos,myypos,32,32)){
+Loss()
+}
+
+//Moving Right and left 
+
+
+if(CollisionBox(540,0,2,600,mybossx,mybossy,100,32)){
+movingright = false
+}
+
+if(CollisionBox(60,0,2,600,mybossx,mybossy,100,32)){
+movingright = true
+}
+
+
+if(movingright == true){
+mybossx += hismovespeed
+}else{
+
+mybossx -= hismovespeed
+}
+
+////////////////////////////////////////////////////////////////ENDS HERE//////////////
+},10)
+}
+
+
+function WinGame(){
+
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+
+movingRight = 0
+movingDown = 0
+movingLeft = 0
+movingUp = 0
+
+
+
+hismovespeed = 0
+},10)
+}
+
+function Loss(){
+
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+
+movingRight = 0
+movingDown = 0
+movingLeft = 0
+movingUp = 0
+
+
+
+hismovespeed = 0
+},10)
+
+}
+
+Update()
+
+
+
+</script>
