@@ -38,12 +38,12 @@ lazerysize = 16
 colorGreen = "Green"
 RandomLaz1 = Math.floor((Math.random() * 5) +1)
 RandomLaz2 = Math.floor((Math.random() * 5) +1)
-picklazerstime = 35
-picklazers = 35
-activerundown = 10
-activecurrent = 10
-stop = 15
-currentstop = 15
+picklazerstime = 15
+picklazers = 15
+activerundown = 18
+activecurrent = 18
+stop = 20
+currentstop = 20
 //1
 color1 = "Blue"
 active1 = false
@@ -67,6 +67,7 @@ lazery5 = 600
 //7
 color6 = "Blue"
 active6 = false
+lazery6 = 600
 function CollisionBox(x1,y1,width1,height1,x2,y2,width2,height2){
 
 if(x1 + width1 >= x2 &&
@@ -86,8 +87,8 @@ function Update(){
 picklazers -= 0.05
 
 if(picklazers <= 0){
-RandomLaz2 = Math.floor((Math.random() * 5) +1)
-RandomLaz1 = Math.floor((Math.random() * 5) +1)
+RandomLaz2 = Math.floor((Math.random() * 6) +1)
+RandomLaz1 = Math.floor((Math.random() * 6) +1)
 console.log(RandomLaz1)
 console.log(RandomLaz2)
 if(RandomLaz1 == 1){
@@ -168,7 +169,8 @@ if(currentstop <= 0){
 color1 = "Blue"
 lazery1 = 600
 active1 = false
-currentstop = 15
+currentstop = stop
+activecurrent = activerundown
 }}}
 
 
@@ -182,7 +184,8 @@ if(currentstop <= 0){
 color2 = "Blue"
 lazery2 = 600
 active2 = false
-currentstop = 15
+currentstop = stop
+activecurrent = activerundown
 }}}
 
 
@@ -195,7 +198,8 @@ if(currentstop <= 0){
 color3 = "Blue"
 lazery3 = 600
 active3 = false
-currentstop = 15
+currentstop = stop
+activecurrent = activerundown
 }}}
 
 if(active4 == true){
@@ -207,7 +211,8 @@ if(currentstop <= 0){
 color4 = "Blue"
 lazery4 = 600
 active4 = false
-currentstop = 15
+currentstop = stop
+activecurrent = activerundown
 }}}
 
 
@@ -221,7 +226,22 @@ if(currentstop <= 0){
 color5 = "Blue"
 lazery5 = 600
 active5 = false
-currentstop = 15
+currentstop = stop
+activecurrent = activerundown
+}}}
+
+
+if(active6 == true){
+currentstop -= 0.1
+activecurrent -= 0.1
+if(activecurrent <= 0){
+lazery6 = 0
+if(currentstop <= 0){
+color6 = "Blue"
+lazery6 = 600
+active6 = false
+currentstop = stop
+activecurrent = activerundown
 }}}
 
 myContext.fillStyle = "Black";
@@ -229,76 +249,102 @@ myContext.fillRect(0,0,600,600)
 
 
 //LAZER/////////////
+//lazer 1
+if(CollisionBox(myxpos,myypos,32,32,0,lazery6,600,80)){
+Loss()
+}
+
+if(CollisionBox(myxpos,myypos,32,32,0,lazery1,600,80)){
+Loss()
+}
+
+if(CollisionBox(myxpos,myypos,32,32,0,lazery2,600,80)){
+Loss()
+}
 
 
+if(CollisionBox(myxpos,myypos,32,32,0,lazery3,600,80)){
+Loss()
+}
 
 
+if(CollisionBox(myxpos,myypos,32,32,0,lazery4,600,80)){
+Loss()
+}
 
+if(CollisionBox(myxpos,myypos,32,32,0,lazery5,600,80)){
+Loss()
+}
 
 myContext.fillStyle = "Yellow";
-myContext.fillRect(0,lazery1,600,50)
+myContext.fillRect(0,lazery1,600,80)
 //laz2
 myContext.fillStyle = "Yellow";
-myContext.fillRect(0,lazery2,600,50)
+myContext.fillRect(0,lazery2,600,80)
 
 //laz3
 myContext.fillStyle = "Yellow";
-myContext.fillRect(0,lazery3,600,50)
+myContext.fillRect(0,lazery3,600,80)
 
 //laz3
 myContext.fillStyle = "Yellow";
-myContext.fillRect(0,lazery4,600,50)
+myContext.fillRect(0,lazery4,600,80)
 
 //laz3
 myContext.fillStyle = "Yellow";
-myContext.fillRect(0,lazery5,600,50)
+myContext.fillRect(0,lazery5,600,80)
+
+
+//laz3
+myContext.fillStyle = "Yellow";
+myContext.fillRect(0,lazery6,600,80)
 
 
 
 myContext.fillStyle = color1;
-myContext.fillRect(0,100,32,50)
+myContext.fillRect(0,100,32,80)
 
 myContext.fillStyle = color1;
-myContext.fillRect(568,100,32,50)
+myContext.fillRect(568,100,32,80)
 
 myContext.fillStyle = color2;
-myContext.fillRect(0,200,32,50)
+myContext.fillRect(0,200,32,80)
 
 myContext.fillStyle = color2;
-myContext.fillRect(568,200,32,50)
+myContext.fillRect(568,200,32,80)
 
 
 myContext.fillStyle = color3;
-myContext.fillRect(0,300,32,50)
+myContext.fillRect(0,300,32,80)
 
 myContext.fillStyle = color3;
-myContext.fillRect(568,300,32,50)
+myContext.fillRect(568,300,32,80)
 
 
 
 myContext.fillStyle = color4;
-myContext.fillRect(0,400,32,50)
+myContext.fillRect(0,400,32,80)
 
 myContext.fillStyle = color4;
-myContext.fillRect(568,400,32,50)
+myContext.fillRect(568,400,32,80)
 
 
 
 
 myContext.fillStyle = color5;
-myContext.fillRect(0,500,32,50)
+myContext.fillRect(0,500,32,80)
 
 myContext.fillStyle = color5;
-myContext.fillRect(568,500,32,50)
+myContext.fillRect(568,500,32,80)
 
 
 
 
 myContext.fillStyle = color6;
-myContext.fillRect(0,600,32,50)
+myContext.fillRect(0,0,32,80)
 
 myContext.fillStyle = color6;
-myContext.fillRect(568,600,32,50)
+myContext.fillRect(568,0,32,80)
 
 
 
