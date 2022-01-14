@@ -1,5 +1,6 @@
 
 
+
 <canvas id="myCoolTag" width="600" height="600" style="border:1px solid #000000; align:center;"></canvas>
 
 <script>
@@ -8,7 +9,7 @@ let myClock
 var myCanvas = document.getElementById("myCoolTag");
 var myContext = myCanvas.getContext("2d");
 
-
+const url = new URL('http://example.com/path/index.html');
 myxpos = 250
 myypos = 300
 movingRight = 0
@@ -36,8 +37,9 @@ currenttimetostop = 20
 lazerlevel = 0
 lazerysize = 16
 colorGreen = "Green"
-RandomLaz1 = Math.floor((Math.random() * 5) +1)
-RandomLaz2 = Math.floor((Math.random() * 5) +1)
+RandomLaz1 = Math.floor((Math.random() * 6) +1)
+RandomLaz2 = Math.floor((Math.random() * 6) +1)
+RandomLaz3 = Math.floor((Math.random() * 6) +1)
 picklazerstime = 15
 picklazers = 15
 activerundown = 18
@@ -89,6 +91,7 @@ picklazers -= 0.05
 if(picklazers <= 0){
 RandomLaz2 = Math.floor((Math.random() * 6) +1)
 RandomLaz1 = Math.floor((Math.random() * 6) +1)
+RandomLaz3 = Math.floor((Math.random() * 6) +1)
 console.log(RandomLaz1)
 console.log(RandomLaz2)
 if(RandomLaz1 == 1){
@@ -155,6 +158,44 @@ if(RandomLaz2 == 6){
 color6 = "Yellow" 
 active6 = true
 }
+
+
+
+
+
+
+
+
+
+if(RandomLaz3 == 2){
+color2 = "Yellow" 
+active2 = true
+}
+
+if(RandomLaz3 == 3){
+color3 = "Yellow" 
+active3 = true
+}
+
+if(RandomLaz3 == 4){
+color4 = "Yellow" 
+active4 = true
+}
+
+if(RandomLaz3 == 5){
+color5 = "Yellow" 
+active5 = true
+}
+
+
+if(RandomLaz3 == 6){
+color6 = "Yellow" 
+active6 = true
+}
+
+
+
+
 
 picklazers = picklazerstime
 }
@@ -503,7 +544,7 @@ hismovespeed = 0
 }
 
 function Loss(){
-
+url.href;
   clearInterval(myClock)
   myClock = setInterval(function(){
 
@@ -524,3 +565,5 @@ Update()
 
 
 </script>
+
+
